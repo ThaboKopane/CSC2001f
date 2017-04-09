@@ -5,8 +5,8 @@ JAVAC=/usr/bin/javac
 JFLAGS= -g
 JCLASSDIR = bin/
 SRC = src/
-JUNITPATH = .:./junit/junit-4.12.jar
-HAMCREST = .:./junit/hamcrest-core-1.3.jar
+JUNITPATH = .:../junit/junit-4.12.jar
+HAMCREST = .:../junit/hamcrest-core-1.3.jar
 
 .SUFFIXES: .java .class
 .java.class:
@@ -27,7 +27,7 @@ default: classes
 
 classes: $(CLASSES:.java=.class)
 
-test = java -cp
+test = java -cp .:$(JUNITPATH) org.junit.runner.JUnitCore $(TESTS)
 
 clean:
 	rm $(JCLASSDIR)*.class
