@@ -31,7 +31,7 @@ public class printIt{
       tree.inOrder();
       }
     catch(FileNotFoundException err){
-      System.err.println("you have an error asshole");
+      System.err.println("you have an error, sir");
     }
   }
 }
